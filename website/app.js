@@ -1,5 +1,6 @@
 /* Global Variables */
-const apiKey = '0b4e6c79a24df03f8294162daabd6d78';
+// removed api key as per reviewer siggestion
+const apiKey = '';
 const apiUrl = 'http://api.openweathermap.org/data/2.5/weather?zip=';
 
 const fetchWeather = async function (url) {
@@ -27,7 +28,7 @@ const updateUI = async function () {
 const handleGenerate = async function () {
     const zip = document.getElementById('zip').value;
     const content = document.getElementById('feelings').value;
-    const url = `${apiUrl}${zip}&APPID=${apiKey}`;
+    const url = `${apiUrl}${zip}&APPID=${apiKey}&units=metric`;
 
     if (zip.length === 0 || feelings.length === 0) {
         alert("All Inputs are required");
